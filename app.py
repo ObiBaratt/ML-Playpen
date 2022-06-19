@@ -15,8 +15,7 @@ sk_model = load('sk_sentiment.joblib')
 
 @app.route('/')
 def index():
-    return f"<a href='{url_for('text_sentiment')}'>Text Sentiment Analysis using TextBlob</a>" \
-           f"<a href='{url_for('sk_sentiment')}'>Text Sentiment Analysis with sklearn</a>"
+    return render_template('index.html')
 
 
 @app.route('/text', methods=['GET', 'POST'])
@@ -38,8 +37,8 @@ def sk_sentiment():
             prediction = 'Positive'
         else:
             prediction = 'Negative'
-        return render_template('text.html', analyzed=prediction, display=input_text)
-    return render_template('text.html')
+        return render_template('sk_text.html', analyzed=prediction, display=input_text)
+    return render_template('sk_text.html')
 
 
 if __name__ == '__main__':
