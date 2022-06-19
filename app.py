@@ -21,7 +21,7 @@ def text_sentiment():
     if request.method == 'POST':
         input_text = request.form['text_input']
         analyzed = basic_text_sentiment(input_text)
-        return render_template('text.html', analyzed=analyzed)
+        return render_template('text.html', analyzed=analyzed, display=input_text)
     return render_template('text.html')
 
 
