@@ -8,12 +8,17 @@
 <form method="post">
     <h2>Enter input text</h2>
     <input type="text" id="input_text" name="text_input">
-    <h2>Output Sentimental Analysis</h2>
+    <input type="submit" value="Submit">
+</form>
+    <h2>Output Sentimental Analysis using TextBlob</h2>
     {% if analyzed %}
        <h3>You entered:</h3>
         <p>{{ display }}</p>
-    <h4>{{ analyzed }}</h4>
+    <h4>The model says: {{ analyzed }}</h4>
     {% endif %}
 </form>
+
+<a href="{{ url_for('index') }}">Return to Homepage</a>
+
 </body>
 </html>
