@@ -78,7 +78,6 @@ def deepface_analysis():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            print('upload_image filename: ' + filename)
             flash('Image successfully uploaded and displayed below')
             filepath = f'static/uploads/{filename}'
             analyzed = deepface_analyze(filepath)
@@ -92,7 +91,6 @@ def deepface_analysis():
 
 @app.route('/display/<filename>')
 def display_image(filename):
-    print('display_image filename: ' + filename)
     return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
 
