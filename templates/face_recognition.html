@@ -21,7 +21,7 @@
     {% if filename %}
        <h3>You submitted:</h3>
         <div>
-		<img src="{{ url_for('display_image', filename=filename) }}" height="600" width="600">
+		<img src="{{ url_for('display_image', filename=filename) }}" height="600" width="600" alt="uploaded image">
 	    </div>
         {% if analyzed %}
     <h4>The model says: {{ analyzed }}</h4>

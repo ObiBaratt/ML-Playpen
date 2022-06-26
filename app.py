@@ -19,7 +19,7 @@ app.config['SECRET_KEY'] = 'super secret key'
 
 sk_model = load('sk_sentiment.joblib')
 
-ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 
 def allowed_file(filename):
